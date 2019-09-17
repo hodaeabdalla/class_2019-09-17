@@ -9,6 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(fivethirtyeight)
+library(ggthemes)
 ```
 
 ```{r}
@@ -23,7 +24,8 @@ ggplot(aes(x = year, y = avg, group = party, color = party)) +
   geom_line() +
   ggtitle("Average Age of Members of Congress") +
   labs(subtitle = "At start of term, 1947-2013") +
-  ggtheme()
+  theme_fivethirtyeight() + 
+  scale_color_fivethirtyeight()
   
 
 ```
